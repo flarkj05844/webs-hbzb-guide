@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>黑白直播 · 站点介绍与信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f4f7fa;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 20px 16px 48px;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* 主页标题 / hero 简约区 */
+    .hero {
+      margin-bottom: 32px;
+      padding: 28px 0 12px;
+      border-bottom: 2px solid #2f9e9e20;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: #0b2b35;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero h1 small {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #2f6e7a;
+      background: #d9f0f0;
+      padding: 0 12px;
+      border-radius: 30px;
+      line-height: 1.8;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      max-width: 720px;
+      color: #2e4c5c;
+      font-size: 1rem;
+    }
+
+    /* 网格卡片 两列/四列自适应 */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 28px 0 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 22px 20px 20px;
+      box-shadow: 0 4px 12px rgba(0, 30, 30, 0.04);
+      border: 1px solid #e2edf0;
+      transition: box-shadow 0.15s, transform 0.1s;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 20px rgba(25, 90, 100, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #0b404a;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card h3::before {
+      content: "▹";
+      color: #1f9a9a;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: #2a4a56;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .card .tag {
+      display: inline-block;
+      background: #e3f2f2;
+      color: #116a6a;
+      font-size: 0.75rem;
+      padding: 2px 12px;
+      border-radius: 30px;
+      margin-top: 8px;
+    }
+
+    /* 说明区 + 提示区 双栏布局 (桌面) */
+    .info-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 24px 0 20px;
+    }
+
+    .info-box {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 22px 22px 24px;
+      flex: 1 1 280px;
+      border: 1px solid #dfedef;
+      box-shadow: 0 2px 8px rgba(0, 40, 40, 0.02);
+    }
+
+    .info-box h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #144f5a;
+      margin-bottom: 12px;
+      border-left: 4px solid #2faeae;
+      padding-left: 12px;
+    }
+
+    .info-box ul, .info-box p {
+      color: #1f3c48;
+      font-size: 0.95rem;
+    }
+
+    .info-box ul {
+      list-style: none;
+    }
+
+    .info-box ul li {
+      padding: 6px 0;
+      border-bottom: 1px solid #e9f0f2;
+    }
+
+    .info-box ul li:last-child {
+      border-bottom: 0;
+    }
+
+    .highlight {
+      background: #f0f9fc;
+      border-radius: 30px;
+      padding: 14px 18px;
+      margin: 18px 0 20px;
+      border-left: 4px solid #1f9a9a;
+      color: #0d3d47;
+      font-size: 0.95rem;
+    }
+
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 20px 22px;
+      margin: 20px 0 10px;
+      border: 1px solid #e1eef0;
+    }
+
+    .faq-summary h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0b404a;
+      margin-bottom: 10px;
+    }
+
+    .faq-item {
+      display: flex;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid #ecf3f5;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #1a5c6a;
+      min-width: 100px;
+      font-size: 0.9rem;
+    }
+
+    .faq-a {
+      color: #2a4c58;
+      font-size: 0.9rem;
+    }
+
+    .site-link-wrapper {
+      margin-top: 24px;
+      text-align: left;
+      background: #e6f4f5;
+      padding: 14px 20px;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    .site-link-wrapper a {
+      color: #0a5f6b;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #3cbaba;
+      transition: 0.1s;
+    }
+
+    .site-link-wrapper a:hover {
+      background: #c3e6e8;
+      border-bottom-color: #096b6b;
+    }
+
+    .footnote {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: #56747e;
+      border-top: 1px solid #d5e4e8;
+      padding-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    /* 移动端调整 */
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 12px 40px;
+      }
+
+      .hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .grid {
+        gap: 14px;
+      }
+
+      .info-box {
+        padding: 18px;
+      }
+
+      .faq-item {
+        flex-wrap: wrap;
+      }
+
+      .faq-q {
+        min-width: auto;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <h1>
+      黑白直播
+      <small>知识库 · 站点索引</small>
+    </h1>
+    <p>
+      基于 <a href="https://webs-hbzb.com" style="color:#0a6f6f;text-decoration:underline;font-weight:500;">黑白直播</a>
+      的信息聚合与参考说明。本页面向新用户与回访者提供站点结构、内容定位及使用提示，非官方替代页面。
+    </p>
+  </div>
+
+  <!-- 网格卡片：目录感布局 -->
+  <div class="grid">
+    <div class="card">
+      <h3>站点定位</h3>
+      <p>聚焦体育赛事直播与回放聚合，覆盖主流联赛、杯赛及热门对抗。提供实时比分、赛程预告及基础数据参考。</p>
+      <span class="tag">实时更新</span>
+    </div>
+    <div class="card">
+      <h3>内容来源</h3>
+      <p>整合公开信号与授权合作渠道，所有播放入口均指向第三方合法平台。黑白直播本身不存储任何视频文件。</p>
+      <span class="tag">聚合导航</span>
+    </div>
+    <div class="card">
+      <h3>使用场景</h3>
+      <p>适用于桌面与移动端快速查找比赛、查看预告，避免多次跳转。页面适配主流浏览器，无额外插件要求。</p>
+      <span class="tag">轻量实用</span>
+    </div>
+    <div class="card">
+      <h3>信息可靠性</h3>
+      <p>赛程数据抓取自公共体育接口，延迟在可接受范围内。黑白直播不提供投注、博彩及任何违规内容。</p>
+      <span class="tag">合规说明</span>
+    </div>
+  </div>
+
+  <!-- 双栏说明区 + 提示区 -->
+  <div class="info-panel">
+    <div class="info-box">
+      <h4>可信说明</h4>
+      <ul>
+        <li>▪ 所有比赛链接均标注来源与清晰度，非自制源。</li>
+        <li>▪ 无弹窗、无恶意跳转、无强制注册要求。</li>
+        <li>▪ 每场直播入口均经过可用性校验，但外部源稳定性由原平台负责。</li>
+        <li>▪ 如遇失效链接，可刷新页面或参考站内备选入口。</li>
+      </ul>
+    </div>
+    <div class="info-box">
+      <h4>浏览提示</h4>
+      <ul>
+        <li>▪ 建议使用 Chrome / Edge / Safari 最新版本。</li>
+        <li>▪ 部分比赛需关闭广告拦截器以保证播放器正常加载。</li>
+        <li>▪ 移动端横屏可获得更佳观看体验。</li>
+        <li>▪ 黑白直播不设客服，问题可查阅站内 FAQ 或通过邮箱反馈。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 高亮提示区  -->
+  <div class="highlight">
+    ⚡ 请认准唯一域名 <strong>webs-hbzb.com</strong>，其它类似域名均与本站无关。黑白直播不会主动索要任何个人隐私或支付信息。
+  </div>
+
+  <!-- FAQ 摘要 (三个常见问题) -->
+  <div class="faq-summary">
+    <h4>常见问题摘要</h4>
+    <div class="faq-item">
+      <span class="faq-q">需要下载 App 吗？</span>
+      <span class="faq-a">不需要。黑白直播为纯网页服务，通过浏览器直接使用，无客户端。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">为什么有的比赛无法播放？</span>
+      <span class="faq-a">可能受版权或区域限制，可尝试切换备用线路，或等待官方源恢复。</span>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">是否包含回放与集锦？</span>
+      <span class="faq-a">部分重点比赛提供赛后录像或精华片段，入口位于赛程详情页。</span>
+    </div>
+  </div>
+
+  <!-- 显式链接，符合要求 a 文本严格='黑白直播' -->
+  <div class="site-link-wrapper">
+    直达站点：<a href="https://webs-hbzb.com">黑白直播</a> · 无需注册，自由浏览
+  </div>
+
+  <!-- 底部相关信息区 -->
+  <div class="footnote">
+    <span>黑白直播 · 知识索引页</span>
+    <span>内容仅供参考，不构成任何承诺 | 版本 2025.03</span>
+  </div>
+</div>
+</body>
+</html>
