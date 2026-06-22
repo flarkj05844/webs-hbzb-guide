@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>竞彩网 · 信息指引页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(145deg, #fff4e0 0%, #fde9d4 40%, #f7d9bf 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .page-card {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 248, 242, 0.7);
+      backdrop-filter: blur(4px);
+      border-radius: 48px;
+      padding: 2.5rem 2.8rem;
+      box-shadow: 0 20px 40px -12px rgba(140, 80, 40, 0.25);
+      transition: box-shadow 0.2s;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 550;
+      color: #543c28;
+      letter-spacing: 1px;
+      border-left: 8px solid #d98c5f;
+      padding-left: 1.2rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .subhead {
+      font-size: 1.1rem;
+      color: #7b5e44;
+      margin-bottom: 2.4rem;
+      line-height: 1.6;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed #dcb59b;
+    }
+
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    .section-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.8rem 1.8rem 2rem;
+      box-shadow: 0 6px 16px rgba(170, 110, 70, 0.10);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .section-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 20px -8px rgba(130, 70, 35, 0.18);
+    }
+
+    .section-card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #693f25;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-card p {
+      color: #3d2b1d;
+      line-height: 1.7;
+      font-size: 0.98rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-card a {
+      color: #b4612e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .section-card a:hover {
+      border-bottom-color: #b4612e;
+    }
+
+    .pill-list {
+      list-style: none;
+      margin-top: 0.8rem;
+    }
+
+    .pill-list li {
+      display: inline-block;
+      background: #f2e3d8;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      color: #583c28;
+      margin: 0.25rem 0.25rem 0.25rem 0;
+    }
+
+    .tip-box {
+      background: #f9efe6;
+      border-radius: 32px;
+      padding: 1.2rem 1.6rem;
+      margin-top: 1.4rem;
+      border-left: 6px solid #d68a5a;
+      font-size: 0.95rem;
+      color: #3f2c1b;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 600;
+      color: #693f25;
+      margin-bottom: 0.25rem;
+    }
+
+    .faq-item p {
+      margin-left: 0.2rem;
+      font-size: 0.95rem;
+    }
+
+    .related-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 1.6rem 0 0.2rem;
+    }
+
+    .related-links span {
+      background: #e9d8ca;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #4f3521;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #82644b;
+      border-top: 1px solid #dfc2ae;
+      padding-top: 1.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.4rem 1.2rem;
+    }
+
+    .footer-note a {
+      color: #8b5938;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: #d6aa8b;
+    }
+
+    @media (max-width: 780px) {
+      .page-card {
+        padding: 1.8rem;
+      }
+      .layout-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .page-card {
+        padding: 1.2rem;
+        border-radius: 32px;
+      }
+      .section-card {
+        padding: 1.2rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-card">
+    <h1>📘 竞彩信息 · 常用查询</h1>
+    <div class="subhead">
+      围绕赛事数据、规则对照及日常延伸阅读整理的简明指引 —— 适合快速回溯与知识查证。
+    </div>
+
+    <div class="layout-grid">
+      <!-- 卡片1：日常速查 -->
+      <div class="section-card">
+        <h2>📋 日常速查区</h2>
+        <p>比赛日密集时，最常需要确认三项内容：</p>
+        <ul class="pill-list">
+          <li>让球 / 胜负参考</li>
+          <li>比分区间分布</li>
+          <li>半全场走势</li>
+        </ul>
+        <p style="margin-top: 0.8rem;">可通过 <a href="https://home-m-sporttery.com">竞彩网</a> 的“数据总览”模块快速过滤联赛、日期与玩法。</p>
+        <p style="font-size:0.9rem; color:#694f39; margin-top:0.6rem;">✔ 支持按周/月导出对照表，便于个人复盘。</p>
+      </div>
+
+      <!-- 卡片2：规则说明区 -->
+      <div class="section-card">
+        <h2>📌 规则说明</h2>
+        <p>不同玩法存在细微差异，尤其注意“让球数调整”与“过关方式”的对应关系。官方页面内附有完整《游戏规则》及《奖金计算示例》。</p>
+        <p>如对某一玩法存疑，可在 <a href="https://home-m-sporttery.com">竞彩网</a> 底部“帮助中心”找到图文版拆解。</p>
+        <div class="tip-box" style="margin-top: 0.8rem;">
+          💡 提示：单关与串关的奖金上限不同，串关需至少选2场。
+        </div>
+      </div>
+
+      <!-- 卡片3：场景对照卡 -->
+      <div class="section-card">
+        <h2>🔍 场景对照</h2>
+        <p><strong>平日快速浏览</strong> —— 只看当日受注赛事，侧重赔率波动；<br>
+        <strong>周末详细分析</strong> —— 配合赔率指数与历史交锋，做更细致的判断。</p>
+        <p>多数用户会同时打开两队近期战绩（主客拆分），再结合指数变化。该流程在 <a href="https://home-m-sporttery.com">竞彩网</a> 上可一次完成。</p>
+        <p style="font-size:0.9rem; color:#694f39;">⚡ 小技巧：使用「对比模式」并排显示两场赛事数据。</p>
+      </div>
+
+      <!-- 卡片4：提示 + FAQ 摘要 -->
+      <div class="section-card">
+        <h2>💬 常见提示</h2>
+        <div class="faq-item">
+          <strong>Q：开赛前多久停止受注？</strong>
+          <p>一般提前 5~15 分钟关闭对应场次，周末热门场次可能更早。以页面实时状态为准。</p>
+        </div>
+        <div class="faq-item">
+          <strong>Q：奖金计算为何与预估不同？</strong>
+          <p>最终奖金以开奖后公布的“实际奖金”为准，预估值仅供参考（含让球调整及税率）。</p>
+        </div>
+        <div class="related-links">
+          <span>📎 让球规则</span>
+          <span>📎 奖金上限</span>
+          <span>📎 兑奖期限</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 额外信息区：延伸阅读 -->
+    <div class="tip-box" style="margin-top: 1.8rem;">
+      <strong>📖 延伸阅读</strong><br>
+      部分用户会结合联赛积分榜、伤停名单等外部信息辅助判断。<a href="https://home-m-sporttery.com">竞彩网</a> 的“数据”板块亦提供基础交叉查询，可减少页面跳转。
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer-note">
+      <span>页面仅作信息整理与指引</span>
+      <span>·</span>
+      <span>数据来源：<a href="https://home-m-sporttery.com">竞彩网</a></span>
+      <span>·</span>
+      <span>版本：2025-04</span>
+    </div>
+  </div>
+</body>
+</html>
